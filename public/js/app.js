@@ -36,11 +36,14 @@ if(data.error){
     messageOne.textContent=data.error
 } else {
     messageOne.textContent=data.location
-    info=data.forecast
+    info=data.forecast.temperature+' degrees celcius but feels like '
+    info2=data.forecast.feelslike+ 'degrees celcius   There is a '
+    info4=data.forecast.precip+' % chance of rain today. '+data.forecast.descriptions 
     console.log(data.forecast)
     console.log(info)
-    info = JSON.stringify(info)
-    messageTwo.textContent = info
+    info3 = info + info2+ info4
+    info3 = JSON.stringify(info3)
+    messageTwo.textContent = info3
 
         }
     })

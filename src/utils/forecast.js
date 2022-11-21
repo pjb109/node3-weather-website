@@ -33,8 +33,11 @@ request({url:URL,json:true}, (error, {body}) => {
         location: body.location.name,
         temperature: body.current.temperature,
         feelslike: body.current.feelslike,
-        descriptions: body.current.weather_descriptions   
+        descriptions: body.current.weather_descriptions,
+        precip: body.current.precip  
     })
+
+    // callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degress out. There is a ' + body.currently.precipProbability + '% chance of rain.')
 
     }
 })
